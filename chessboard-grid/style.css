@@ -1,0 +1,63 @@
+html, body {
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #7C9D96;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.container {
+    padding: auto;
+    display: grid;
+}
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: min(100vh, 100vw);
+    height: min(100vh, 100vw);
+    background-color: saddlebrown;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.cell-first:nth-child(odd){
+    position: relative;
+    background-color: #f0d9b5;
+}
+
+.cell-first:nth-child(even){
+    position: relative;
+    background-color: #b58863;
+}
+
+.cell-second:nth-child(odd){
+    position: relative;
+    background-color: #b58863;
+}
+
+.cell-second:nth-child(even){
+    position: relative;
+    background-color: #f0d9b5;
+}
+.piece {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.piece-hover:hover .piece {
+    transform: translate(-50%, -50%) scale(1.2);
+}

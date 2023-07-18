@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Text INput Form</title>
+</head>
+<body>
+    <form>
+        <label>Name:
+            <input type="text" name="name"> 
+        </label>
+        <label>Password:
+            <input type="password" name="password"> 
+        </label>
+        <label>Description:
+            <textarea name="textarea" id="textarea" cols="30" rows="5"></textarea>
+        </label>
+        
+        <input type="radio" name="delivery" id="amDelivery">
+        <label for="amDelivery">Morning</label>
+        <input type="radio" name="delivery" id="pmDelivery">
+        <label for="pmDelivery">Afternooon</label>
+        <input type="radio" name="delivery" id="eveDelivery">
+        <label for="eveDelivery">Evening</label>
+
+        <input type="checkbox" name="drink" id="coffee" value="coffee">
+        <label for="coffee">Coffee</label>
+        <input type="checkbox" name="drink" id="capucinno" value="capucinno">
+        <label for="capucinno">Cappucino</label>
+        <input type="checkbox" name="drink" id="chocolate" value="chocolate">
+        <label for="chocolate">Chocolate</label>
+
+        <label for="topping">Topping</label>
+        <select name="topping" id="topping">
+            <option value="cinnamon">Cinnamon</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+        </select>
+
+        <input type="submit" name="Send" value="Send">
+    </form>
+</body> 
+</html>
