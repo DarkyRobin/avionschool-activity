@@ -1,2 +1,3 @@
-# All assignments and activities will be stored here for easy access from pc to another 
-## Avion
+# Avion
+##### Centralized storage for assignments and activities, facilitating easy access across multiple devices.
+
