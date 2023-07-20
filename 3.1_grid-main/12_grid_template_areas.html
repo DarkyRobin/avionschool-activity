@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Demo with grid-template-areas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "top top top"
+        "left main main"
+        "bottom bottom bottom";
+      grid-template-columns: 200px 1fr 1fr;
+      grid-template-rows: 100px 1fr 50px;
+      gap: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .top {
+      grid-area: top;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .left {
+      grid-area: left;
+      background-color: #2196F3;
+      color: white;
+      padding: 10px;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #f44336;
+      color: white;
+      padding: 10px;
+    }
+
+    .bottom {
+      grid-area: bottom;
+      background-color: #555;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="top">Top</div>
+    <div class="left">Left</div>
+    <div class="main">Main Content</div>
+    <div class="bottom">Bottom</div>
+  </div>
+</body>
+</html>
