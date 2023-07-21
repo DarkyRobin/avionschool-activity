@@ -7,24 +7,37 @@
     <title>Product Landing Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header id="header">
-        <div class="row">
-            <img id="header-img" src="images/png/logo-no-background.png" alt="Company Logo">
-            <nav id="nav-bar">
-                <a class="nav-link" href="#home">Home</a>
-                <a class="nav-link" href="#about_us">About Us</a>
-                <a class="nav-link" href="#products">Products</a>
-            </nav>
-        </div>
-
+        <img id="header-img" src="images/png/logo-no-background.png" alt="Company Logo">
+        <nav id="nav-bar">
+            <ul class="list-inline">
+                <li><a class="nav-link" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about_us">About Us</a></li>
+                <li><a class="nav-link" href="#products">Products</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container">
+    <div class="container">
         <section id="home">
-            <img src="" alt="" sizes="" srcset="">
+            <div class="row-left">
+                <h1>A Sip of Comfort</h1>
+                <p>At Books & Coffee Cafe, we take our coffee seriously! Our skilled baristas artfully brew the finest
+                    coffee beans, delivering rich and velvety cups of java perfection. From classic espresso creations
+                    to
+                    creamy lattes and frothy cappuccinos, each sip is a delightful experience. And for the tea
+                    enthusiasts,
+                    we offer an array of soothing teas to complement your reading journey.</p>
+            </div>
+            <div class="row-right">
+                <img id="ads-image" src="images/pexels-tim-douglas-6205624.jpg" alt="" sizes="" srcset="">
+            </div>
         </section>
 
         <section id="about_us">
@@ -52,7 +65,7 @@
                 <input type="submit" id="submit" value="Submit">
             </form>
         </section>
-    </main>
+    </div>
 </body>
 
 </html>
