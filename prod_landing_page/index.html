@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Books and Brews</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <img src="images/logo-no-background.png" alt="" id="header-image">
+        <nav class="nav-bar">
+            <ul class="menu-list">
+                <li class="nav-link" class="active"><a href="#home">Home</a></li>
+                <li class="nav-link"><a href="#products">Products</a></li>
+                <li class="nav-link"><a href="#about-us">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="menu-icons">
+            <a href=""><i class='bx bxs-cart'></i></a>
+            <div class="bx bx-menu" id="burger-menu"></div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+            <h1>A Sip of Comfort</h1>
+            <p>At Books & Brews Cafe, we take our coffee seriously! Our skilled baristas artfully brew the finest
+                coffee beans, delivering rich and velvety cups of java perfection. From classic espresso creations
+                to
+                creamy lattes and frothy cappuccinos, each sip is a delightful experience. And for the tea
+                enthusiasts,
+                we offer an array of soothing teas to complement your reading journey.</p>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="content">
+            <h1>Products</h1>
+            <div class="prod-container">
+                <div class="card">
+                    <div class="title">Classic Espresso</div>
+                    <div class="prod-image">
+                        <img src="images/menu/Classic-Espresso.jpg" alt="">
+                    </div>
+                    <div class="description">Timeless and rich.</div>
+                    <button class="add-to-cart" id="addtoCart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <div class="title">Creamy Cappuccino</div>
+                    <div class="prod-image">
+                        <img src="images/menu/Classic-Espresso.jpg" alt="">
+                    </div>
+                    <div class="description">Creamy and balanced.</div>
+                    <button class="add-to-cart" id="addtoCart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <div class="title">Velvety Latte</div>
+                    <div class="prod-image">
+                        <img src="images/menu/Classic-Espresso.jpg" alt="">
+                    </div>
+                    <div class="description">Smooth and comforting.</div>
+                    <button class="add-to-cart" id="addtoCart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <div class="title">Smooth Macchiato</div>
+                    <div class="prod-image">
+                        <img src="images/menu/Classic-Espresso.jpg" alt="">
+                    </div>
+                    <div class="description">Espresso with a milk foam topping.</div>
+                    <button class="add-to-cart" id="addtoCart">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <div class="title">Flavorsome Iced Coffee</div>
+                    <div class="prod-image">
+                        <img src="images/menu/Classic-Espresso.jpg" alt="">
+                    </div>
+                    <div class="description">Refreshing and chilled</div>
+                    <button class="add-to-cart" id="addtoCart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about-us" id="about-us">
+        <div class="content">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sed praesentium tempore! Tenetur, aut
+                suscipit. Minima laudantium, odio sed pariatur explicabo vitae doloremque rerum aperiam, unde dolorum
+                minus suscipit cupiditate!</p>
+        </div>
+    </section>
+
+    <section class="mailing-list">
+        <div class="content">
+            <h1>Join Our News Letter</h1>
+            <p>Stay in the loop with the latest book releases, coffee specials, and community events! Join our
+                newsletter now for exclusive updates and exciting offers at Books and Coffee Cafe. 📚☕ Sign up today and
+                be a part of our literary and coffee-loving community! 🎉📰
+            </p>
+            <form action="" id="form" method="submit">
+                <i class='bx bxs-envelope'></i>
+                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <button type="submit" name="button" id="subscribe" >Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

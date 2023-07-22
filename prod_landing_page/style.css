@@ -1,0 +1,209 @@
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --primary-color: #124948;
+    --secondary-color: #A7A284;
+    --hover-color: #E5C1BD;
+    --h1-font: 4.5rem;
+    --h2-font: 3rem;
+    --h3-font: 3rem;
+    --h4-font: 2rem;
+    --regular-font: 1rem;
+    --text-color: #fff;
+  }
+/* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    width: 100%;
+    padding: 20px 14%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    position: fixed;
+    transition: all .35s ease;
+  }
+
+  header img{
+    width: 30%;
+    height: 30%;
+    margin-top: 5px;
+  }
+
+
+  .menu-list {
+    display: flex;
+  }
+
+  .menu-list  a {
+    color: var(--text-color);
+    font-weight: 400;
+    padding: 10px 30px;
+    font-size: var(--regular-font);
+    transition: all .36s ease;
+  }
+
+  .menu-icons i {
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 32px;
+    margin-right: 20px;
+    transition: all .36s ease;
+  }
+
+  .menu-icons i:hover {
+    color: var(--hover-color);
+  }
+
+  #burger-menu {
+    color: var(--text-color);
+    font-size: 32px;
+    z-index: 2;
+    margin-right: 20px;
+    display: none;
+  }
+
+  section {
+    padding:  200px 14%;
+  }
+/* Homepage */
+  .home {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 100vh;
+    width: 100%;
+    background: url(images/cup-milk-with-coffee-powder-rollcake.jpg);
+    background-size: cover;
+    background-position: center top;
+    position:relative;
+    align-items: start;
+  }
+/* Content inside section */
+  .content h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 2;
+    letter-spacing: .6rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .content p {
+    font-size: var(--regular-font);
+    font-weight: 300;
+    letter-spacing: .2rem;
+    text-shadow: 2px 2px 2px gray;
+  }
+/* About Us */
+  .about-us { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+    width: 100%;
+    background: url(images//cafe.jpg);
+    background-size: cover;
+    background-position: center top;
+  }
+/* Products */
+  .products .card {
+    background-color: #FFEEE2;
+    border-radius: 10px;
+    padding: 13px 13px 13px 13px;
+    box-shadow: 8px 8px 14px black;
+    text-align: center;
+    height: auto;
+  }
+
+  .products .title {
+    margin: 13px 0px 13px 0px;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  .card img {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .card .description {
+    text-align: left;
+    margin: 13px 30px 13px 30px;
+    font-size: 15px;
+    color: var(--primary-color);
+  }
+
+  .add-to-cart {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    width: 100%
+  }
+
+  .add-to-cart:hover {
+    background-color: #7B9E87;
+    color: #471323;
+    box-shadow: 8px 8px 14px black;
+  }
+
+  .prod-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+input[type=email] {
+    border: 1px solid black;
+    height: 40px;
+    padding: 0 1rem;
+    width: 100%;
+    outline: none;
+    transition: background 0.5s;
+    font-size: 18px;
+    border-radius: 100px;
+    box-sizing: border-box;
+}
+
+#form {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    padding: 10px;
+    gap: 10px;
+}
+
+#form i{
+    font-size: 30px;
+    margin: 5px;
+}
+
+#subscribe {
+    padding: 0px 10px 0px 10px;
+}
+
+.email-entry {
+    
+
+}
+
+
