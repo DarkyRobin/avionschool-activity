@@ -1,4 +1,4 @@
-html, body {
+body {
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 0;
@@ -141,58 +141,63 @@ html, body {
     background-position: center top;
   }
 /* Products */
-  .products .card {
-    background-color: #FFEEE2;
-    border-radius: 10px;
-    padding: 13px 13px 13px 13px;
-    box-shadow: 8px 8px 14px black;
-    text-align: center;
-    height: auto;
-  }
+.prod-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+.card {
+  background-color: #FFEEE2;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 30%;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 10px;
+  margin: 14px;
+}
 
-  .products .title {
-    margin: 13px 0px 13px 0px;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--primary-color);
-  }
+.products .title {
+  margin: 13px 0px 13px 0px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
 
-  .card img {
-    width: 250px;
-    height: auto;
-    object-fit: contain;
-  }
+.card img {
+  width: 250px;
+  height: 500px;
+  object-fit: contain;
+}
 
-  .card .description {
-    text-align: left;
-    margin: 13px 30px 13px 30px;
-    font-size: 15px;
-    color: var(--primary-color);
-  }
+.card .description {
+  text-align: left;
+  margin: 13px 30px 13px 30px;
+  font-size: 15px;
+  color: var(--primary-color);
+}
 
-  .add-to-cart {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition-duration: 0.4s;
-    width: 100%
-  }
+.add-to-cart {
+  background-color: #b39ced;
+  color: var(--text-color);
+  border: none;
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  width: 100%;
+}
 
-  .add-to-cart:hover {
-    background-color: #7B9E87;
-    color: #471323;
-    box-shadow: 8px 8px 14px black;
-  }
-
-  .prod-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
+.add-to-cart:hover {
+  background-color: #199393;
+  color: #471323;
+  box-shadow: 8px 8px 14px black;
+}
 
 input[type=email] {
     border: 1px solid black;
@@ -254,6 +259,10 @@ input[type=email] {
     section {
         padding:  80px 4%;
     }
+
+    .card {
+      width: 45%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -284,5 +293,27 @@ input[type=email] {
 
     .menu-list.open {
         left: 0;
+    }
+
+    .card {
+      width: 100%;
+    }
+
+    .card img {
+      width: 450px;
+      height: 500px;
+    }
+
+    .about-us { 
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    #form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
     }
 }
