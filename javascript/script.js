@@ -138,7 +138,7 @@ function moveDown(){
     let buyList = toBuy.value.split('\n');
     let removeItem = buyList.pop();
     toBuy.value = buyList.join('\n');
-    const newFridgeLIst = fridge.value.split('\n');
+    const newFridgeLIst = 
     console.log(newFridgeLIst)
 }
 
