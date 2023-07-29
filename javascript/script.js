@@ -99,22 +99,53 @@
 //   console.log(formatLikes(["Max", "John", "Mark"])); // Output: "Max, John and Mark like this"
 //   console.log(formatLikes(["Alex", "Jacob", "Mark", "Max"])); // Output: "Alex, Jacob and 2 others like this"
 
-function validatePIN (pin) {
-    let pinlength = pin.length;
-    let isNumber = containsOnlyNumbers(pin);
-    if(isNumber === true){
-        if(pinlength === 4 || pinlength === 6){
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
+// function validatePIN (pin) {
+//     let pinlength = pin.length;
+//     let isNumber = containsOnlyNumbers(pin);
+//     if(isNumber === true){
+//         if(pinlength === 4 || pinlength === 6){
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     } else {
+//         return false;
+//     }
+// }
+
+// function containsOnlyNumbers(input) {
+//     return /^\d+$/.test(input);
+// }
+
+// console.log(validatePIN('1234'));
+
+// let eve = document.querySelector('.eve');
+// let x = 0;
+// eve.onclick = function() {
+//     x = x + 40;
+//     eve.style.left = x + 'px';
+// }
+
+//Initialize DOMS to variables 
+let toBuy = document.querySelector('#toBuy');
+let fridge = document.querySelector('#fridge');
+
+
+let moveUpBtn = document.querySelector('#moveUp');
+let moveDownBtn = document.querySelector('#moveDown');
+
+function moveDown(){
+    let buyList = toBuy.value.split('\n');
+    let removeItem = buyList.pop();
+    toBuy.value = buyList.join('\n');
+    const newFridgeLIst = fridge.value.split('\n');
+    console.log(newFridgeLIst)
 }
 
-function containsOnlyNumbers(input) {
-    return /^\d+$/.test(input);
+function moveUp(){
+    let fridgeList = fridge.value.split('\n');
 }
 
-console.log(validatePIN('1234'));
+moveDownBtn.onclick = () => {
+    moveDown();
+}
