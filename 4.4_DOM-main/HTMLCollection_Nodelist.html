@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTMLCollection and NodeList Demo</title>
+</head>
+<body>
+  <h1>Main Heading</h1>
+  <div id="container">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+  </div>
+
+  <script>
+    // HTMLCollection example
+    const containerDiv = document.getElementById('container');
+    const paragraphsHTMLCollection = containerDiv.getElementsByTagName('p');
+
+    console.log("HTMLCollection Example:");
+    console.log("HTMLCollection length:", paragraphsHTMLCollection.length);
+
+    for (let i = 0; i < paragraphsHTMLCollection.length; i++) {
+      console.log("Paragraph", i + 1, ":", paragraphsHTMLCollection[i].innerText);
+    }
+
+    // Adding a new paragraph dynamically (will reflect in HTMLCollection)
+    const newParagraph = document.createElement('p');
+    newParagraph.innerText = "New Paragraph";
+    containerDiv.appendChild(newParagraph);
+
+    console.log("After adding a new paragraph:");
+    console.log("HTMLCollection length:", paragraphsHTMLCollection.length);
+
+    // NodeList example
+    const paragraphsNodeList = containerDiv.querySelectorAll('p');
+
+    console.log("\nNodeList Example:");
+    console.log("NodeList length:", paragraphsNodeList.length);
+
+    for (let i = 0; i < paragraphsNodeList.length; i++) {
+      console.log("Paragraph", i + 1, ":", paragraphsNodeList[i].innerText);
+    }
+
+    // Adding a new paragraph dynamically (will NOT reflect in NodeList)
+    const anotherNewParagraph = document.createElement('p');
+    anotherNewParagraph.innerText = "Another New Paragraph";
+    containerDiv.appendChild(anotherNewParagraph);
+
+    console.log("After adding another new paragraph:");
+    console.log("NodeList length:", paragraphsNodeList.length);
+  </script>
+</body>
+</html>
