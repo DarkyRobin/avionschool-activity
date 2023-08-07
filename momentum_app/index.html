@@ -29,30 +29,35 @@
         <p id="seconds">12</p>
       </div>
     </div>
-    <div id="greeting">Hark! Greetings, fair <span id="name">Ayen</span></div>
+    <div id="greeting"><span id="name"></span></div>
   </div>
   <div class="today-container">
-    <div id="dateToday">Today</div>
-    <div id="curTodo">I wanna eat Pizza</div>
+    <div id="dateToday"></div>
+    <div id="todo">To Do</div>
   </div>
   <div class="quotes"></div>
   <div class="footer-container">
-    <div id="temp">20 degress</div>
+    <div id="temp">California Valley</div>
     <div id="quotes">
-      <span id="randQuote">"Lorem ipsum, dolor sit amet consectetur adipisicing elit."</span>
+      <span id="randQuote"></span>
     </div>
-    <div id="todo">
-      <a href="">ToDo</a>
-    </div>
+    
     <div id="nameModal" class="name-modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-          <label for="username">Enter Your Name</label>
-          <input type="text" name="username" id="username">
-          <button type="submit" id="enter">Enter</button>
+        <label for="username">Enter Your Name</label>
+        <input type="text" name="username" id="username">
+        <button type="submit" id="enterName">Enter</button>
       </div>
-
+    </div>
+    <div id="todoModal" class="todo-modal">
+      <div class="modal-content">
+        <span class="close-2">&times;</span>
+        <label for="task">Enter To Do List</label>
+        <input type="text" name="task" id="task">
+        <button type="submit" id="enterTodo">Enter</button>
+        <ul id="todolist"></ul>
+      </div>
     </div>
   </div>
   <script src="srcipt.js"></script>

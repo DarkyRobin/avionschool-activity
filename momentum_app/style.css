@@ -35,7 +35,7 @@ body {
 }
 
 .greet-container {
-  padding: 160px 14%;  
+  padding: 100px 14%;  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,8 +45,7 @@ body {
   color: var(--text-color);
   display: flex;
   flex-direction: row;
-  justify-content: normal;
-  align-items: center;
+  justify-content: space-around;
 }
 
 #greeting {
@@ -61,8 +60,8 @@ body {
   width: 7rem;
   font-size: 40px;
   font-weight: bold;
-  color: black;
-  background-color: var(--hover-color);
+  color: fff;
+  background-color: rgb(76, 130, 154);
   border-radius: 10px;
   margin-left: 5%;
   padding: 30px;
@@ -75,7 +74,7 @@ body {
 }
 
 .today-container {
-  padding: 160px 14%;
+  padding: 100px 14%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,7 +85,12 @@ body {
   font-size: 15px;
 }
 
-.today-container #curTodo {
+.today-container #todo {
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+.today-container #todo:hover {
   color: var(--text-color);
   font-size: 20px;
 }
@@ -98,13 +102,14 @@ body {
   align-items: center;
   justify-content:space-between;
   color: var(--text-color);
+  margin: 10px;
 }
 
 .footer-container #randQuote{
   font-size: 12px;
 }
 
-.name-modal {
+.name-modal, .todo-modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -119,21 +124,23 @@ body {
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
   color: black;
-  align-items: center;
 }
 
-.close {
+.close, .close-2 {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  align-self: flex-end;
 }
 
 .close:hover {
@@ -141,25 +148,50 @@ body {
 
 }
 
-input[type=text] {
+input[type='text'] {
   border: 0;
   outline: 0;
   border-bottom: 2px solid black;
-  text-align: center;
+  text-align: left;
   width: 100%;
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
-#enter {
+#todo {
+  cursor: pointer;
+}
+
+#enterName, #enterTodo {
   padding: 10px;
   font-size: 18px;
   border: none;
   cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
-#enter:hover {
+#enterName, #enterTodo:hover {
   background-color: #7B9E87;
   color: #471323;
   box-shadow: 8px 8px 14px black;
+}
+
+.deleteItem {
+  cursor: pointer;
+  text-align: end;
+
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 5px;
 }
 
