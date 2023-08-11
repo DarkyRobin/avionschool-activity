@@ -9,7 +9,25 @@
 </head>
 
 <body>
-  <div class="tic-tac-toe" id="ticTacToe"></div>
+  <div class="select-player">
+    <label for="player">Select Player</label>
+    <select name="player" id="player">
+      <option value="X">X</option>
+      <option value="O">O</option>
+    </select>
+  </div>
+  <div class="tic-tac-toe" id="ticTacToe">
+    <div class="cell" id="1"></div>
+    <div class="cell" id="2"></div>
+    <div class="cell" id="3"></div>
+    <div class="cell" id="4"></div>
+    <div class="cell" id="5"></div>
+    <div class="cell" id="6"></div>
+    <div class="cell" id="7"></div>
+    <div class="cell" id="8"></div>
+    <div class="cell" id="9"></div>
+  </div>
+  <div class="infoGame">Player 1 Start</div>
   <button id="resetButton">Reset</button>
   <div class="game-history">
     <button id="prevButton" disabled>Previous</button>

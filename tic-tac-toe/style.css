@@ -24,17 +24,18 @@ body {
   cursor: pointer;
 }
 
-.game-history {
-  margin-top: 20px;
-}
-
 button {
   padding: 8px 16px;
-  margin: 0 5px;
+  margin: 10px 5px;
   cursor: pointer;
 }
 
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.infoGame {
+  color: blue;
+  padding: 3px;
 }
