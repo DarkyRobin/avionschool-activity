@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async/Await Demo</title>
+</head>
+<body>
+  <h1>Async/Await Demo</h1>
+  <button id="load-data">Load Data</button>
+  <div id="result"></div>
+
+  <script>
+    async function fetchData() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve('Data fetched successfully!');
+        }, 1000);
+      });
+    }
+
+    const loadButton = document.getElementById('load-data');
+    const resultDiv = document.getElementById('result');
+
+    loadButton.addEventListener('click', async () => {
+      resultDiv.textContent = 'Loading...';
+
+      try {
+        const data = await fetchData();
+        resultDiv.textContent = data;
+      } catch (error) {
+        resultDiv.textContent = `Error: ${error}`;
+      }
+    });
+  </script>
+</body>
+</html>
+

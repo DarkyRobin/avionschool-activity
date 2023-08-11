@@ -330,6 +330,74 @@
 // buyFood('sumthin');
 
  
-export default function add(num1, num2) {
-  return num1 + num2;
+// export default function add(num1, num2) {
+//   return num1 + num2;
+// }
+
+//CLASSES
+// class Player {
+//   constructor(country, playerName) {
+//     this.country = country;
+//     this.playerName = playerName;
+//   }
+//   showPlayerInfo(country, playerName) {
+//     console.log(`${this.playerName} was born in ${this.country}`);
+//   }
+// }
+
+// class BasketballPlayer extends Player {
+//   constructor(country, playerName, age){
+//     super(country, playerName);
+//     this.age = age;
+//   }
+ 
+//   showPlayerAbility(age) {
+//     console.log(`${this.playerName} is ${age} years old and knows how to play basketball.`);
+//   }
+// }
+
+// const newPlayer = new BasketballPlayer('USA', 'Lebron');
+// console.log(newPlayer.showPlayerInfo());
+// console.log(newPlayer.showPlayerAbility(25));
+
+//PROMISE
+// function findUserData(name, age, email) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       let userData = {
+//         name: 'Vive',
+//         age: 30,
+//         email: 'vee@vee.com'
+//       }
+//       if (name === userData.name && age === userData.age && email === userData.email) {
+//         resolve(`User found Name: ${userData.name} Age: ${userData.age} Email: ${userData.email}`);
+//       } else {
+//         reject('Error: Data fetch failed');
+//       }
+//     }, 1000);
+//   })
+// }
+
+// findUserData('Vive', 30, 'vee@vee.com')
+// .then((data) => {
+//   console.log(data);
+// })
+// .catch((error) => {
+//   console.log(error);
+// });
+// findUserData('VV', 20, 'vvv@vv.com')
+// findUserData('Vive', 30, 'vee@vee.com')
+
+// fetch('https://jsonplaceholder.typicode.com/comments/1')
+// .then(response => response.json())
+// .then(data => console.log(data))
+
+//async await
+async function getJoke() {
+  const response = await fetch('https://api.chucknorris.io/jokes/random');
+  const joke = await response.json();
+  console.log(JSON.stringify(joke.value))
 }
+
+getJoke();
+

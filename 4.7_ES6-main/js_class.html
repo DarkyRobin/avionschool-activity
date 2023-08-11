@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Class</title>
+</head>
+<body>
+  <h1>Animal Class</h1>
+
+  <script>
+    class Animal {
+      constructor(name, species) {
+        this.name = name;
+        this.species = species;
+        this.isAlive = true;
+      }
+
+      makeSound(sound) {
+        console.log(`${this.name} makes a ${sound} sound.`);
+      }
+
+      sleep() {
+        console.log(`${this.name} is sleeping.`);
+      }
+
+      longLiveTheKing() {
+        this.isAlive = false;
+        console.log(`${this.name}! Long live the king!`);
+      }
+    }
+
+    // Create instances of the Animal class
+    const lion = new Animal('Simba', 'Lion');
+    const elephant = new Animal('Dumbo', 'Elephant');
+
+    // Use methods on the instances
+    lion.makeSound('roar');   // Output: Simba makes a roar sound.
+    elephant.sleep();         // Output: Dumbo is sleeping.
+
+    lion.longLiveTheKing();               // Output: Simba! Long live the king!
+    console.log(lion.isAlive);  // Output: false
+  </script>
+</body>
+</html>
+

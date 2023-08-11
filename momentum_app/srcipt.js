@@ -144,3 +144,6 @@ taskInput.addEventListener('keyup', (event) => {
   }
 });
 
+function addNewQuote(){
+  
+}
