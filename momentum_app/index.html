@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momentum App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="greet-container">
+    <div id="clock">
+      <div class="clock-item">
+        <p id="hour">12</p>
+      </div>
+      <div class="clock-item">
+        <p id="minutes">23</p>
+      </div>
+      <div class="clock-item">
+        <p id="seconds">12</p>
+      </div>
+    </div>
+    <div id="greeting"><span id="name"></span></div>
+  </div>
+  <div class="today-container">
+    <div id="dateToday"></div>
+    <div id="todo">To Do</div>
+  </div>
+  <div class="quotes"></div>
+  <div class="footer-container">
+    <div id="temp">California Valley</div>
+    <div id="quotes">
+      <span id="randQuote"></span>
+    </div>
+    
+    <div id="nameModal" class="name-modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <label for="username">Enter Your Name</label>
+        <input type="text" name="username" id="username">
+        <button type="submit" id="enterName">Enter</button>
+      </div>
+    </div>
+    <div id="todoModal" class="todo-modal">
+      <div class="modal-content">
+        <span class="close-2">&times;</span>
+        <label for="task">Enter To Do List</label>
+        <input type="text" name="task" id="task">
+        <button type="submit" id="enterTodo">Enter</button>
+        <ul id="todolist"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="srcipt.js"></script>
+</body>
+
+</html>

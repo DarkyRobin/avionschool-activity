@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>querySelectorAll Demo with for loop</title>
+</head>
+<body>
+  <h1>Main Heading</h1>
+  <div id="container">
+    <p class="paragraph">Paragraph 1</p>
+    <p class="paragraph">Paragraph 2</p>
+    <p class="paragraph">Paragraph 3</p>
+  </div>
+  <ul id="list">
+    <li class="list-item">Item 1</li>
+    <li class="list-item">Item 2</li>
+    <li class="list-item">Item 3</li>
+  </ul>
+  <div class="grid-container">
+    <div class="grid-item">Grid Item 1</div>
+    <div class="grid-item">Grid Item 2</div>
+    <div class="grid-item">Grid Item 3</div>
+  </div>
+  <input type="text" id="inputField" value="Default Value">
+  <button id="btnSubmit">Submit</button>
+
+  <script>
+    // Selecting multiple elements with querySelectorAll and modifying them using for loop
+    const paragraphs = document.querySelectorAll('.paragraph');
+    for (let i = 0; i < paragraphs.length; i++) {
+      const p = paragraphs[i];
+      p.textContent = `Paragraph ${i + 1} - Changed`;
+      p.style.fontWeight = 'bold';
+    }
+
+    // Selecting and modifying list items with a specific class using for loop
+    const listItems = document.querySelectorAll('.list-item');
+    for (let i = 0; i < listItems.length; i++) {
+      const li = listItems[i];
+      li.textContent = `Item ${i + 1} - Modified`;
+      li.style.backgroundColor = 'yellow';
+    }
+
+    // Selecting and modifying grid items using for loop
+    const gridItems = document.querySelectorAll('.grid-item');
+    for (let i = 0; i < gridItems.length; i++) {
+      const item = gridItems[i];
+      item.textContent = `Grid Item ${i + 1} - Updated`;
+      item.style.color = 'red';
+    }
+
+    // Selecting and modifying the input field
+    const inputField = document.querySelector('#inputField');
+    inputField.value = 'Changed Value';
+    inputField.style.border = '2px solid green';
+
+    // Selecting and handling a button click event
+    const btnSubmit = document.querySelector('#btnSubmit');
+    btnSubmit.addEventListener('click', () => {
+      alert('Button Clicked!');
+    });
+  </script>
+</body>
+</html>
+
