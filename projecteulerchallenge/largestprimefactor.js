@@ -5,6 +5,36 @@ function isPrime(number) {
     if(number <= 1) {
         return false;
     }
+
+    for(i = 2; i <= Math.sqrt(number); i++) {
+        if(number % i === 0){
+            return false;
+        }
+    }
+    return true;
 }
-let n = 100;
-console.log(isPrime(n));
+
+function largestPrimeNumber(maxNum) {
+    for(i = maxNum; i >=2; i--) {
+        if(isPrime(i)) {
+            return i;
+        }
+    }
+    return null;
+}
+
+function largestPrimeFactor(number) {
+    let largestFactor = 0;
+
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0 && isPrime(i)) {
+        largestFactor = i;
+        }
+    }
+
+    return largestFactor;
+}
+
+const maxNumber = 100;
+const largestPrime = largestPrimeNumber(maxNumber);
+console.log(largestPrime); 
