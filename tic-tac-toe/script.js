@@ -6,11 +6,7 @@ const prevtBtn =document.getElementById('prevButton');
 const nextBtn =document.getElementById('nextButton');
 let player = document.getElementById('player');
 let curPlayer  = 'X';
-player.addEventListener('change', function(){
-  curPlayer = player.value;
-  infoGame.innerHTML = `Player ${curPlayer} Start`;
-})
-
+const gameHistory = [];
 const winningCombos = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
   [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
@@ -20,7 +16,17 @@ const winningCombos = [
 let boardCells = ["", "", "", "", "", "", "", "", ""];
 let isGameOver = false;
 
+player.addEventListener('change', function(){
+  curPlayer = player.value;
+  infoGame.innerHTML = `Player ${curPlayer} Start`;
+})
+
 divticTacToe.addEventListener('click', markCellTarget)
+resetBtn.addEventListener('click', resetGame);
+
+
+
+
 
 function playerTurn(){
   curPlayer = curPlayer === 'X' ? 'O' : 'X';
@@ -60,6 +66,7 @@ function checkWinner() {
   
   if(isGameOver) {
     infoGame.innerHTML = `Player ${curPlayer}'s Won!`;
+    saveGameHistory(boardCells);
     return;
   } else {
     playerTurn();
@@ -72,8 +79,13 @@ function resetGame() {
     cell.innerText = '';
   })
   boardCells = ["", "", "", "", "", "", "", "", ""];
+  isGameOver = false;
   infoGame.innerHTML = `Select player`;
 }
 
-resetBtn.addEventListener('click', resetGame);
+function saveGameHistory(boardCells) {
+  gameHistory.push([...boardCells])
+}
+
+
 
