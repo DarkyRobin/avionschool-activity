@@ -13,7 +13,12 @@ const winningCombos = [
   [0, 4, 8], [2, 4, 6]           // diagonals
 ];
 
-let boardCells = [["", "", ""], ["", "", ""], ["", "", ""]];
+let boardCells = [
+  ["", "", ""], 
+  ["", "", ""], 
+  ["", "", ""]
+];
+
 let isGameOver = false;
 let curMoveIndex = 0;
 
@@ -33,52 +38,75 @@ function playerTurn(){
   infoGame.innerHTML = `Player ${curPlayer}'s Turn`;
 }
 
-function updateBoardCells(cellId){
-  boardCells[cellId] = curPlayer;
-}
-
 function markCellTarget(e) {
   const target = e.target;
   const targetValue = document.getElementById(target.id);
   targetValue.innerText = curPlayer;
   updateBoardCells(target.id);
-  console.log(checkWin());
-  // checkWinner();
-  saveGameHistory();
-  updateButtons();
-  
-}
-
-function checkWinner() {
-  for(let i = 0; i <=7; i++) {
-    const winCombo = winningCombos[i];
-    let a = boardCells[winCombo[0]];
-    let b = boardCells[winCombo[1]];
-    let c = boardCells[winCombo[2]];
-
-    if (a === '' || b === '' || c === '') {
-      continue;
-    }
-    
-    if (a === b && b === c) {
-      isGameOver = true;
-      break
-    }
-  }
-  
-  if(isGameOver) {
+  if(checkWin(curPlayer)) {
     infoGame.innerHTML = `Player ${curPlayer}'s Won!`;
-    return;
   } else {
     playerTurn();
+  };
+  console.log(boardCells)
+  saveGameHistory();
+  updateButtons();
+}
+
+const board = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+]
+
+function updateBoardCells(cellId){
+  for(i = 0; i < 3; i++) {
+    if(board[0][i] == cellId) {
+      boardCells[0][i] = curPlayer;
+    } else if(board[1][i] == cellId) {
+      boardCells[1][i] = curPlayer;
+    } else if(board[2][i] == cellId) {
+      boardCells[2][i] = curPlayer;
+    }
   }
 }
+
+//1D Approach
+// function checkWinner() {
+//   for(let i = 0; i <=7; i++) {
+//     const winCombo = winningCombos[i];
+//     let a = boardCells[winCombo[0]];
+//     let b = boardCells[winCombo[1]];
+//     let c = boardCells[winCombo[2]];
+
+//     if (a === '' || b === '' || c === '') {
+//       continue;
+//     }
+    
+//     if (a === b && b === c) {
+//       isGameOver = true;
+//       break
+//     }
+//   }
+  
+  // if(isGameOver) {
+  //   infoGame.innerHTML = `Player ${curPlayer}'s Won!`;
+  //   return;
+  // } else {
+  //   playerTurn();
+  // }
+// }
 
 function resetGame() {
   cells.forEach((cell, index) => {
     cell.innerText = '';
   })
-  boardCells = [["", "", ""], ["", "", ""], ["", "", ""]];
+
+  boardCells = [
+    ["", "", ""], 
+    ["", "", ""], 
+    ["", "", ""]
+  ];
   gameHistory = [boardCells];
   curMoveIndex = 0;
   isGameOver = false;
@@ -87,7 +115,7 @@ function resetGame() {
 }
 
 function saveGameHistory() {
-  gameHistory.push([...boardCells])
+  gameHistory.push(...[boardCells])
 }
 
 
@@ -110,9 +138,12 @@ function showNextMove() {
 }
 
 function updateBoard() {
-  cells.forEach((cell, index) => {
-    cell.innerText = boardCells[index];
-  })
+  let arr = gameHistory[curMoveIndex];
+  console.log(curMoveIndex)
+  console.log(arr)
+  // cells.forEach((cell, index) => {
+  //   cell.innerText = boardCells[index];
+  // })
 }
 
 function updateButtons() {
@@ -120,27 +151,20 @@ function updateButtons() {
   nextBtn.disabled = curMoveIndex === gameHistory.length - 1;
 }
 
-const board = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-]
 
 
-function checkWin() {
+function checkWin(curPlayer) {
   // Check rows
   for (let row = 0; row < 3; row++) {
     if (boardCells[row][0] === curPlayer && boardCells[row][1] === curPlayer && boardCells[row][2] === curPlayer) {
-      console.log(boardCells[row][0]);
-      console.log(true);
+      return true;
     }
   }
 
   // Check columns
   for (let col = 0; col < 3; col++) {
-    if (board[0][col] === curPlayer && boardCells[1][col] === curPlayer && boardCells[2][col] === curPlayer) {
-      console.log(true);
-      // return true;
+    if (boardCells[0][col] === curPlayer && boardCells[1][col] === curPlayer && boardCells[2][col] === curPlayer) {
+      return true;
     }
   }
 
@@ -149,7 +173,6 @@ function checkWin() {
     (boardCells[0][0] === curPlayer && boardCells[1][1] === curPlayer && boardCells[2][2] === curPlayer) ||
     (boardCells[0][2] === curPlayer && boardCells[1][1] === curPlayer && boardCells[2][0] === curPlayer)
   ) {
-    // return true;
-    console.log(true);
+    return true;
   }
 }
