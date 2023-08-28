@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hash Map Example</title>
+</head>
+<body>
+  <script>
+    class HashMap {
+      constructor() {
+        this.map = {};
+      }
+
+      put(key, value) {
+        this.map[key] = value;
+      }
+
+      get(key) {
+        return this.map[key];
+      }
+
+      remove(key) {
+        if (this.map.hasOwnProperty(key)) {
+          delete this.map[key];
+        }
+      }
+
+      containsKey(key) {
+        return this.map.hasOwnProperty(key);
+      }
+
+      keys() {
+        return Object.keys(this.map);
+      }
+
+      values() {
+        return Object.values(this.map);
+      }
+    }
+
+    // Example usage
+    const hashMap = new HashMap();
+    hashMap.put("apple", 5);
+    hashMap.put("banana", 3);
+    hashMap.put("cherry", 8);
+
+    console.log("Value for 'apple':", hashMap.get("apple"));
+    console.log("Value for 'banana':", hashMap.get("banana"));
+    console.log("Value for 'grape':", hashMap.get("grape"));
+
+    console.log("Keys:", hashMap.keys());
+    console.log("Values:", hashMap.values());
+
+    hashMap.remove("banana");
+
+    console.log("Contains 'banana'?", hashMap.containsKey("banana"));
+  </script>
+</body>
+</html>
+

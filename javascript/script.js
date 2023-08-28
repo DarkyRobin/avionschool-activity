@@ -393,11 +393,76 @@
 // .then(data => console.log(data))
 
 //async await
-async function getJoke() {
-  const response = await fetch('https://api.chucknorris.io/jokes/random');
-  const joke = await response.json();
-  console.log(JSON.stringify(joke.value))
+// async function getJoke() {
+//   const response = await fetch('https://api.chucknorris.io/jokes/random');
+//   const joke = await response.json();
+//   console.log(JSON.stringify(joke.value))
+// }
+
+// getJoke();\
+
+//Check if book title exist
+function findBookByTitle(title) {
+    return invList.find(book => book.title === title);
+}
+const store = {
+    store: 'BookFully',
+    inventorylist: [],
+    earnings: 0,
 }
 
-getJoke();
+const invList = store.inventorylist;
 
+let Book = function(title, quantity, value) {
+    this.title = title;
+    this.quantity = quantity;
+    this.value = value;
+}
+
+function addBook(book) {
+    store.inventorylist.push(book);
+}
+
+function restockBook(title, quantity) {
+    const book = findBookByTitle(title);
+    if(book) {
+        book.quantity += quantity; 
+    }
+}
+
+function sellBook(title, quantity) {
+    const book = findBookByTitle(title);
+    if(!book) {
+        console.log(`Book "${title} is out of stock."`);
+    } else if(book.quantity < quantity) {
+        console.log(`We only have ${book.quantity} stock/s left.`);
+    } else {
+        book.quantity -= quantity;
+        store.earnings += book.value * quantity;
+        console.log(`Successful transaction.`);
+    }
+}
+
+function totalEarnings() {
+    console.log(`Total Earnings: PHP ${store.earnings}`);
+}
+
+function listInventory() {
+    console.log(`Inventory List:`)
+    invList.forEach(book => {
+        console.log(`Title: "${book.title}", Quantity: ${book.quantity}, Value: PHP ${book.value}`);
+    })    
+}
+
+var book1 = new Book('Ikigai', 20, 950);
+var book2 = new Book('The Mountain is You', 15, 250);
+var book3 = new Book('Rich Dad, Poor Dad', 10, 500);
+
+addBook(book1);
+addBook(book2);
+addBook(book3);
+callFunctions();
+function callFunctions() {
+    totalEarnings();
+    listInventory();
+}

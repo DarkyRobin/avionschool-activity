@@ -7,11 +7,12 @@ const nextBtn = document.getElementById('nextButton');
 let player = document.getElementById('player');
 let curPlayer  = 'X';
 let gameHistory = [];
-const winningCombos = [
-  [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-  [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-  [0, 4, 8], [2, 4, 6]           // diagonals
-];
+
+// const winningCombos = [
+//   [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+//   [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+//   [0, 4, 8], [2, 4, 6]           // diagonals
+// ];
 
 let boardCells = [
   ["", "", ""], 
@@ -43,14 +44,15 @@ function markCellTarget(e) {
   const targetValue = document.getElementById(target.id);
   targetValue.innerText = curPlayer;
   updateBoardCells(target.id);
-  if(checkWin(curPlayer)) {
+  if(checkWinner(curPlayer)) {
     infoGame.innerHTML = `Player ${curPlayer}'s Won!`;
   } else {
     playerTurn();
   };
-  console.log(boardCells)
+  console.log(boardCells);
   saveGameHistory();
   updateButtons();
+  
 }
 
 const board = [
@@ -115,7 +117,7 @@ function resetGame() {
 }
 
 function saveGameHistory() {
-  gameHistory.push(...[boardCells])
+  gameHistory = structuredClone(...[boardCells]);
 }
 
 
@@ -153,7 +155,7 @@ function updateButtons() {
 
 
 
-function checkWin(curPlayer) {
+function checkWinner(curPlayer) {
   // Check rows
   for (let row = 0; row < 3; row++) {
     if (boardCells[row][0] === curPlayer && boardCells[row][1] === curPlayer && boardCells[row][2] === curPlayer) {
