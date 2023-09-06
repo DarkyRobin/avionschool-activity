@@ -4,7 +4,7 @@ function computeEquation(equation) {
   let operator = '';
 
   for(let char of chars) {
-    if(char === '+' || char === '-') {
+    if(char === '+' || char === '-' || char === '*' || char === '/') {
       operator = char;
     } else {
       if(operator === '') {
@@ -16,6 +16,12 @@ function computeEquation(equation) {
             break;
           case '-':
             result -= parseInt(char)
+            break;
+          case '*':
+            result *= parseInt(char)
+            break;
+          case '/':
+            result /= parseInt(char)
             break
         }
       }
@@ -26,3 +32,5 @@ function computeEquation(equation) {
 
 // Test cases
 console.log(computeEquation("1+1"));
+console.log(computeEquation("3*2+1"));
+console.log(computeEquation("4/2"));
